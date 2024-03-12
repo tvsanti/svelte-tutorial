@@ -1,14 +1,18 @@
 <script lang="ts">
-    import NestedButton from "./NestedButton.svelte";
-	let htmltr = `this string contains some <strong>HTML!!!</strong>`;
+  import PackageInfo from "./PackageInfo.svelte";
 
-    let imgStr: string = '/favicon.png';
+	const pkg = {
+		name: 'svelte',
+		speed: 'blazing',
+		version: 4,
+		website: 'https://svelte.dev'
+	};
+
 </script>
 
 <h1>Hello Santiago</h1>
-<p>{@html htmltr}</p>
-<img src={imgStr} alt="imagen chingona" />
-<NestedButton count={[1,2,3,4]}/>
+<PackageInfo {...pkg} />
+
 
 <style>
     h1 {
