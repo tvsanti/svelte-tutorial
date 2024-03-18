@@ -1,15 +1,9 @@
 <script>
-	import { time } from './stores.js';
-
-	const formatter = new Intl.DateTimeFormat(
-		'en',
-		{
-			hour12: false,
-			hour: '2-digit',
-			minute: '2-digit',
-			second: '2-digit'
-		}
-	);
+	import { count } from './stores.js';
 </script>
 
-<h1>The time is {formatter.format($time)}</h1>
+<h1>The count is {$count}</h1>
+
+<button on:click={count.increment}>+</button>
+<button on:click={count.decrement}>-</button>
+<button on:click={count.reset}>reset</button>
